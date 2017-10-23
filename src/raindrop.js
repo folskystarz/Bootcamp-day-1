@@ -1,47 +1,65 @@
-function rainDrop (num) {
-	//this keeps pushing factors of 2
-    let result = [];
-    let x = num;
-    while (x % 2 === 0) {
-        result.push(2);
-        x = x / 2;
-    }
-    
-    let sqrtNum = Math.sqrt(x);
-    for (let i = 3; i <= sqrtNum; i++) {
-        while (x % i === 0) {
-            result.push(i);
-            x = x / i;
-        }
-    }
-
-    if (x > 2) {
-       result.push(x);
-    }
-    
-    let unique = result.filter(function(elem, index, self) {
-    return index == self.indexOf(elem);
-      })
-    
-    let output = "";
-   for (let i = 0; i < result.length; i++){
-     if (unique[i] === 3){
-       output = output + "Pling"
-     }else if(unique[i] ===5){
-       output = output +"Plang"
-     }else if (unique[i] === 7){
-       output = output + "Plong"
-     }
+module.exports = {
+  
+     rainDrops: (num) => {
+  
+         
+  
+   
+  
+   if (isNaN(num)){
+  
+     return "Value must be a number"
+  
    }
-    if (output === ""){
-      return num;
-    }else{
-      return output;
-    }
-}
-
-console.log(rainDrop(10)); // [2, 5]
-console.log(rainDrop(28));
-console.log(rainDrop(34));
-console.log(rainDrop(105));
-
+  
+   if(num === ""){
+  
+     return "Value must be entered";
+  
+   }
+  
+   if(num % 1 !== 0){
+  
+     return "Value Cannot be a Decimal number";
+  
+   }
+  
+         
+  
+   let result = "";
+  
+   let list = [3,5,7];
+  
+     
+  
+   if(num % list[0] === 0){
+  
+     result += "Pling";
+  
+   }
+  
+   if(num % list[1] === 0){
+  
+     result += "Plang";
+  
+   }
+  
+   if(num % list[2] === 0){
+  
+     result += "Plong";
+  
+   }
+  
+   if(num % list[0] !== 0 && num % list[1] !== 0 && num % list[2] !== 0){
+  
+     result = num;
+  
+   }
+  
+   
+  
+   return result.toString();
+  
+     }
+  
+  }

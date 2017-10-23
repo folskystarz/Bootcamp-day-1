@@ -1,0 +1,26 @@
+{
+  "name": "raindrop",
+  "version": "1.0.0",
+  "description": "raind drop TDD",
+  "main": "src/raindrop.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016\u0016\u0016https://github.com/folskystarz/Bootcamp-day-1.git"
+  },
+  "keywords": [
+    "TDD",
+    "javascript"
+  ],
+  "author": "foluso adedeji",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  }
+}
